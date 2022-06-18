@@ -1,0 +1,89 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+    color: #271400;
+    background-color: #ece8dc;
+}
+
+nav {
+    background-color: #7B3F00;
+    background-image: linear-gradient(180deg, #7B3F00 0%, #6C3000 100%);
+}
+
+.navbar .container .collapse .navbar-nav .nav-item .nav-link, .navbar .container .navbar-brand{
+    color: #fdf2d1;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.2s ease 0s;
+}
+
+.navbar .container .collapse .navbar-nav .nav-item .nav-link:hover,
+ .navbar .container .navbar-brand:hover{
+    letter-spacing: 4px;
+    color: #cec5aa;
+}
+
+.navbar-spacing{
+    height: 56px;
+
+}
+
+.product-box, .form-box{
+    background-color: #fffbee;
+    box-shadow:0 1px 5px -1px #271400;
+}
+
+.product-box h5{
+    height: 48px;
+    overflow: hidden;
+
+}
+
+.product-box div{
+    width: 250px;
+    height: 250px;
+}
+
+.product-box img{
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.btn-gradient{
+    background-color: #7B3F00;
+    background-image: linear-gradient(180deg, #7B3F00 0%, #6C3000 100%);
+    color: #fdf2d1;
+}
+
+.btn-gradient:hover{
+    background-image: none;
+    background-color: transparent;
+    color: #807972;
+    border: 1px solid #807972;
+}
+
+.btn-transparent{
+    background-image: none;
+    background-color: transparent;
+    color: #807972;
+    border: 1px solid #807972;
+}
+
+.btn-transparent:hover{
+    background-color: #7B3F00;
+    background-image: linear-gradient(180deg, #7B3F00 0%, #6C3000 100%);
+    color: #fdf2d1;
+}
+
+td {
+    border-color: #271400;
+    color:#271400;
+}
+
+a {
+    color: #271400;
+    transition: color 0.2s ease 0s;;
+}
+
+a:hover{
+    color: #6C3000;
+}

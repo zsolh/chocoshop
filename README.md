@@ -184,3 +184,61 @@ Bejelentkezés
 	Ha jó a jelszó is
 	Bejelentkezés szerver oldali állapotárolása - munkamenetben
 	
+***
+
+A jelszavak tárolása az egyik legérzékenyebb része a fejlesztésnek.
+
+Általában a felhasználók egy jelszót használnak több helyen. Ezért veszélyes ha kiszivárog.
+
+Felhasználók és fejlesztők közös felelőssége.
+
+Felhasználó mit tehet?
+	Nehéz jelszót talál ki.
+		Ideális jelszó:
+			Nem értelmes szó, hanem kód.
+			Tartalmazzon, kisbetűt, nagybetűt, számot és speciális karaktert.
+			Legyen hosszú, akár 20 karakter.
+			Minden oldalon egyedi jelszó legyen.
+		Az ideális jelszó nem megjegyezhető
+			Megoldás: password manager program használata
+			A legtöbb böngésző tartalmazza ezt.
+				Ilyenkor azt az egy jelszót kell megjegyezni, mely a password managerhez tartozik.
+
+Fejlesztőként
+	Ideális jelszó megkövetelése részben/egészben
+	Maga a fejlesztő és az üzemeltető sem ismerheti meg véletlenül sem a felhasználók jelszavát.
+	A jelszavakat nem tároljuk el eredeti formájukban, hanem azokat titkosítjuk
+		Mi magunk se láthatjuk meg az eredeti jelszót.
+		Ha feltörik az adatbázist, akkor sem látják a jelszót.
+
+Feltörhetetlenség nem létezik.
+Egyéb módszerek:
+	Több faktoros hitelesítések.
+
+
+Titkosítás működése
+	Egyirányú titkosítási algoritmusok
+		Alapvetően így nem visszafejthető.
+	
+	Regisztrációkor és bejelentkezéskor is ugyanazt az eljárást alkalmazzuk.
+	Csak a titkosított kódot tároljuk el.
+	Belépéskor ha a két kód egyezik, meg tudjuk állapítani, hogy a két jelszó egyezik-e.
+	Titkosításkor létrejövő kód: hashkód
+	Ez számokból és kisbetűkből áll.
+	Algoritmustól függően mindig ugyanannyi karakterből fog állni.
+	Pl.: sha256 sha512 md5 stb.
+	
+Az adatbázis kis- és nagybetűre nem érzékeny
+Az algoritmusok ugyanazon betű kis és nagy változatából más hash kódot hoznak létre.
+
+
+A titkosítás önmagában nem elég
+Ha több felhasználónak ugyanaz a jelszava, ha csak egyet is feltörnek, az összes érintett fiókhoz hozzáférnek.
+
+Cél: Az egyező jelszavaknál is más legyen a hashkód.
+Megoldás
+Generálunk egy teljesen random karakterláncot, melyet szintén eltárolunk.
+A titkosításba a jelszóhoz hozzáfűzzük. (Akár beágyazott egyéb titkosítási algoritmusok.)
+Ezt hívjuk sózásnak, angolul hash salt
+
+
